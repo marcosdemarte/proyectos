@@ -1,0 +1,49 @@
+{
+  "name": "@marcosdemarte/proyectos",
+  "version": "1.0.0",
+  "description": "Componente React de portafolio (proyectos + galeria con lightbox) reutilizable entre sitios Next.js, con imagenes incluidas e i18n via next-intl.",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "files": [
+    "src",
+    "images",
+    "scripts",
+    "README.md"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./portafolio.css": "./src/portafolio.css"
+  },
+  "scripts": {
+    "postinstall": "node scripts/copy-images.js",
+    "predev": "node scripts/copy-images.js",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next build && next start",
+    "typecheck": "tsc --noEmit"
+  },
+  "author": "Marcos Demarte",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcosdemarte/proyectos.git"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "next": ">=14"
+  },
+  "dependencies": {
+    "react-youtube": "^10.1.0",
+    "yet-another-react-lightbox": "^3.28.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "next": "^16.1.3",
+    "react": "^19",
+    "react-dom": "^19",
+    "typescript": "^5"
+  }
+}

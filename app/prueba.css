@@ -1,0 +1,44 @@
+/* Estilos del sitio anfitrión, solo para probar el paquete en local */
+:root {
+  --c-texto: #111827;
+  --c-suave: #4b5563;
+  --c-borde: #dfe3e9;
+  --c-acento: #0b5fc4;
+  --c-acento-2: #2f8cf0;
+  --c-acento-oscuro: #08408a;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--c-texto);
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+.prueba {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 40px clamp(20px, 5vw, 40px) 120px;
+}
+
+.prueba__idiomas {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  font-weight: 600;
+}
+
+.prueba__titulo {
+  margin: 40px 0 clamp(36px, 5vw, 56px);
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}

@@ -1,0 +1,263 @@
+/*
+ * @marcosdemarte/portafolio · portafolio.css
+ * CSS puro, metodología BEM. Bloques: proyectos, proyecto, galeria.
+ *
+ * Uso en el proyecto que instala el paquete (una sola vez):
+ *   import "@marcosdemarte/portafolio/portafolio.css";
+ *
+ * Los colores toman las variables del sitio (--c-texto, --c-suave, --c-borde,
+ * --c-acento, --c-acento-oscuro, --c-acento-2). Si no existen, usa el valor
+ * de respaldo, así el paquete también funciona solo.
+ */
+
+/* ---------- Lista y "Mostrar más" ---------- */
+
+.proyectos__lista,
+.proyectos__mas {
+  --pf-espacio: clamp(40px, 6vw, 56px);
+}
+
+.proyectos__lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pf-espacio);
+}
+
+.proyectos__mas {
+  margin-top: var(--pf-espacio);
+}
+
+/* Las tandas siguientes quedan dentro del <details>: sin margen propio */
+.proyectos__mas > .proyectos__lista {
+  margin-top: 0;
+}
+
+.proyectos__mas > .proyectos__mas {
+  margin-top: var(--pf-espacio);
+}
+
+.proyectos__boton {
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
+  padding: 15px 34px;
+  background: #f1f3f6;
+  border-radius: 999px;
+  color: var(--c-texto, #111827);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  list-style: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.proyectos__boton::-webkit-details-marker {
+  display: none;
+}
+
+.proyectos__boton:hover {
+  background: #e5e9f0;
+}
+
+.proyectos__boton:focus-visible {
+  outline: 3px solid var(--c-acento-2, #2f8cf0);
+  outline-offset: 2px;
+}
+
+/* Al abrirse, el botón desaparece y aparece la tanda siguiente */
+.proyectos__mas[open] > .proyectos__boton {
+  display: none;
+}
+
+/* ---------- Proyecto ---------- */
+
+/* Escritorio: imagen cuadrada de hasta 440px + texto. El texto se centra
+   verticalmente respecto de la imagen; si es más alto que ella, la fila
+   crece y es la imagen la que queda centrada. */
+.proyecto {
+  display: grid;
+  grid-template-columns: minmax(0, 440px) minmax(0, 1fr);
+  gap: clamp(24px, 3.5vw, 36px);
+  align-items: center;
+}
+
+.proyecto__imagen {
+  margin: 0;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #f7f8fa;
+  border: 1px solid var(--c-borde, #dfe3e9);
+  border-radius: 20px;
+}
+
+.proyecto__abrir {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: zoom-in;
+}
+
+.proyecto__abrir:focus-visible {
+  outline: 3px solid var(--c-acento-2, #2f8cf0);
+  outline-offset: -3px;
+}
+
+.proyecto__foto {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.proyecto__texto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+}
+
+.proyecto__titulo {
+  margin: 0;
+  color: var(--c-texto, #111827);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.proyecto__descripcion {
+  margin: 0;
+  color: var(--c-suave, #4b5563);
+  font-size: clamp(16px, 1.6vw, 17px);
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+.proyecto__fecha {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.proyecto__credencial {
+  margin: 0;
+  color: var(--c-texto, #111827);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.proyecto__enlace {
+  color: var(--c-acento, #0b5fc4);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.proyecto__enlace:hover {
+  color: var(--c-acento-oscuro, #08408a);
+  text-decoration: underline;
+}
+
+/* Texto solo para lectores de pantalla */
+.proyecto__aviso {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Tablet: dos columnas iguales */
+@media (max-width: 1023px) {
+  .proyecto {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Celular: una columna, primero la imagen y después el texto */
+@media (max-width: 767px) {
+  .proyecto {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .proyecto__imagen {
+    width: 100%;
+    max-width: 520px;
+  }
+}
+
+/* ---------- Galería (lightbox) ---------- */
+
+.galeria__slide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.galeria__imagen {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+.galeria__video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.galeria__video-espera {
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.galeria__video-marco {
+  width: 100%;
+  height: 100%;
+}
+
+.galeria__contador {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: auto;
+  z-index: 99999;
+  color: #fff;
+  font-size: 16px;
+  transform: none;
+}
+
+.galeria__contador--video {
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+}
+
+.galeria__cerrar {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  left: auto;
+  z-index: 99999;
+  transform: none;
+}
+
+.galeria__cerrar--video {
+  top: 10px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+}

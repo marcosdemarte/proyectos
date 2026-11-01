@@ -1,0 +1,8 @@
+node_modules/
+*.tgz
+.DS_Store
+.next/
+next-env.d.ts
+*.tsbuildinfo
+# se genera con scripts/copy-images.js (npm install / npm run dev)
+public/imagenes/
