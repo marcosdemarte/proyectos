@@ -112,7 +112,7 @@ const Proyecto = ({ item, lenguaje, onAbrir }: ProyectoProps) => {
 
         {item.demo && (
           <p className="proyecto__credencial">
-            <strong>{item.demo.subtitulo}:</strong>
+            <strong>{item.demo.subtitulo}</strong>
             <br />
             {item.demo.dni}: {item.demo.dni_value}
             <br />
