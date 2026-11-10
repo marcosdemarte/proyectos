@@ -181,7 +181,7 @@
 }
 
 /* Celular: una columna, primero la imagen y después el texto */
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .proyecto {
     grid-template-columns: minmax(0, 1fr);
     gap: 20px;
@@ -261,4 +261,10 @@
   left: 50%;
   right: auto;
   transform: translateX(-50%);
+}
+
+@media (max-width: 1023px) {
+  .proyectos__lista {
+    gap: 90px !important;
+  }
 }
