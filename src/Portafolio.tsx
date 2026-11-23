@@ -103,13 +103,6 @@ const Proyecto = ({ item, lenguaje, onAbrir }: ProyectoProps) => {
           </p>
         ))}
 
-        <p className="proyecto__fecha">
-          {t.date}:{" "}
-          <time dateTime={fechaISO(item.fechaIgnaguracion)}>
-            {formatearFecha(item.fechaIgnaguracion, lenguaje)}
-          </time>
-        </p>
-
         {item.demo && (
           <p className="proyecto__credencial">
             <strong>{item.demo.subtitulo}</strong>
@@ -119,6 +112,13 @@ const Proyecto = ({ item, lenguaje, onAbrir }: ProyectoProps) => {
             {item.demo.password}: {item.demo.password_value}
           </p>
         )}
+
+        <p className="proyecto__fecha">
+          {t.date}:{" "}
+          <time dateTime={fechaISO(item.fechaIgnaguracion)}>
+            {formatearFecha(item.fechaIgnaguracion, lenguaje)}
+          </time>
+        </p>
 
         <a
           className="proyecto__enlace"

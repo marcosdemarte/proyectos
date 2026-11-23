@@ -25,7 +25,6 @@ body {
 .prueba {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 40px clamp(20px, 5vw, 40px) 120px;
 }
 
 .prueba__idiomas {
