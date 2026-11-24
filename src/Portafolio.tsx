@@ -12,6 +12,8 @@ import {
 import { textos } from "./textos";
 import locales from "./locales.json";
 
+import { CargarImagen } from "@marcosdemarte/cargar-imagenes";
+
 /**
  * Los estilos están en `portafolio.css` (CSS puro, BEM). El proyecto que
  * instala el paquete lo importa una sola vez:
@@ -83,13 +85,12 @@ const Proyecto = ({ item, lenguaje, onAbrir }: ProyectoProps) => {
           className="proyecto__abrir"
           onClick={onAbrir}
           aria-label={`${ui.abrirGaleria} ${item.titulo}`}>
-          <img
-            className="proyecto__foto"
+          <CargarImagen
             src={getImageUrl(item.imagenes.carpeta, item.imagenes.portada)}
             alt={item.titulo}
             width={630}
             height={630}
-            loading="lazy"
+            className={`proyecto__foto`}
           />
         </button>
       </figure>
@@ -307,3 +308,11 @@ export const Portafolio = ({
     </>
   );
 };
+/*     <img
+            className="proyecto__foto"
+            src={getImageUrl(item.imagenes.carpeta, item.imagenes.portada)}
+            alt={item.titulo}
+            width={630}
+            height={630}
+            loading="lazy"
+          /> */
