@@ -12,7 +12,7 @@ import {
 import { textos } from "./textos";
 import locales from "./locales.json";
 
-import { CargarImagen } from "@marcosdemarte/cargar-imagenes";
+import { CargarImagen } from "@marcosdemarte/cargar-imagen";
 
 /**
  * Los estilos están en `portafolio.css` (CSS puro, BEM). El proyecto que

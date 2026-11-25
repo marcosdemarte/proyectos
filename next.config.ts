@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
   // pre-compilado), asi que Next tiene que transpilarlo el mismo. Esto
   // tambien hace que Next procese los imports de imagen del paquete.
   transpilePackages: [
-    "@marcosdemarte/cargar-imagenes",
+    "@marcosdemarte/cargar-imagen",
   ],
 };
 

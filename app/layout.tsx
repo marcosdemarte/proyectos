@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import "./prueba.css";
 // En los otros proyectos se importa así: import "@marcosdemarte/portafolio/portafolio.css";
 import "../src/portafolio.css";
-import "@marcosdemarte/cargar-imagenes/cargar-imagen.css";
+import "@marcosdemarte/cargar-imagen/cargar-imagen.css";
 
 export const metadata = {
   title: "Portafolio · prueba local",

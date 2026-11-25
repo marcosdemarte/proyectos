@@ -34,7 +34,7 @@
     "react-dom": ">=18"
   },
   "dependencies": {
-    "@marcosdemarte/cargar-imagenes": "github:marcosdemarte/cargar-imagen",
+    "@marcosdemarte/cargar-imagen": "github:marcosdemarte/cargar-imagen",
     "next-intl": "^4.16.0",
     "react-youtube": "^10.1.0",
     "yet-another-react-lightbox": "^3.28.0"
