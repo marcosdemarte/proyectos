@@ -88,8 +88,6 @@ const Proyecto = ({ item, lenguaje, onAbrir }: ProyectoProps) => {
           <CargarImagen
             src={getImageUrl(item.imagenes.carpeta, item.imagenes.portada)}
             alt={item.titulo}
-            width={630}
-            height={630}
             className={`proyecto__foto`}
           />
         </button>
